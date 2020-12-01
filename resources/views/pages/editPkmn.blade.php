@@ -13,12 +13,12 @@
         <label for="type_id">Pokémon's type :
             <select name="type_id" id="">
                 @foreach ($typeData as $type)
-                    <option value="{{$type->id}}">{{$type->name}}</option>
+                <option {{$type->id == $type->id ? 'selected' : ''}} value="{{$type->id}}">{{$type->name}}</option>
                 @endforeach
             </select>
         </label>
         <label for="src">Pokémon's image :
-            <input type="file" name="src" value="{{$newPkmn->src}}">
+            <input type="file" name="src" value="{{$newPkmn->src}}"> Source : {{$newPkmn->src}}
         </label>
         <button class="btn btn-danger w-50" type="submit">Edit</button>
     </form>
