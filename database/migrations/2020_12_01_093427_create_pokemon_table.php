@@ -17,8 +17,8 @@ class CreatePokemonTable extends Migration
             $table->id();
             $table->char('name', 20);
             $table->integer('level');
-            $table->unsignedBigInteger('type_id');
-            $table->foreign('type_id')->references('id')->on('types');
+            $table->unsignedBigInteger('type_id')->nullable();
+            $table->foreign('type_id')->references('id')->on('types')->onDelete('set null');
             $table->char('src', 80);
             $table->timestamps();
         });

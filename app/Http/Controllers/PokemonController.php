@@ -43,7 +43,6 @@ class PokemonController extends Controller
        $request->validate([
            'name'=>'required|max:20',
            'level'=>'required|min:1|max:100',
-           'type_id'=>'required',
            'src'=>'required'
        ]);
         $newPkmn = new Pokemon;

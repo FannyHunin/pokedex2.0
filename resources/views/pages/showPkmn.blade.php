@@ -6,7 +6,11 @@
         <div class="card-body"><h5 class="card-title">
             {{$newPkmn->name}}
         </h5>
-          <h5 class="card-title">{{$newPkmn->type->name}}</h5>
+          @if ($newPkmn->type == null)
+            <h5 class="card-title">???</h5>
+          @else
+            <h5 class="card-title">{{$newPkmn->type->name}}</h5>
+          @endif
           <p class="card-text">{{$newPkmn->level}}</p>
           <div>
             <a href="/editPkmn/{{$newPkmn->id}}" class="btn btn-light border border-muted">Edit</a>
